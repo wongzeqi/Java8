@@ -1,19 +1,17 @@
-package com.wjq.refrence;
+package com.wjq.streamapi;
 
 public class User {
+
     private String username;
     private String password;
+    private int age;
+    private String sex;
 
-    public User(String username, String password) {
+    public User(String username, String password, int age, String sex) {
         this.username = username;
         this.password = password;
-    }
-
-    public User() {
-    }
-
-    public User(String username) {
-        this.username = username;
+        this.age = age;
+        this.sex = sex;
     }
 
     public String getUsername() {
@@ -32,11 +30,29 @@ public class User {
         this.password = password;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", age=" + age +
+                ", sex='" + sex + '\'' +
                 '}';
     }
 }
