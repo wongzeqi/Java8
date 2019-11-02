@@ -37,6 +37,42 @@ public class TestStreamAPI {
     }
 
 
+
+    @Test
+    public void test2(){
+        List<User> users = getUsers();
+        Stream<User> stream = users.stream();
+        //截断
+        stream.limit(3).forEach(System.out::println);//获取前三个
+    }
+
+    @Test
+    public void test3(){
+        List<User> users = getUsers();
+        Stream<User> stream = users.stream();
+        //截断
+        stream.skip(3).forEach(System.out::println);//跳过前三个
+    }
+
+
+
+
+    //distinct方法将会按照hashCode和equals方法进行判断并且去重
+    @Test
+    public void test4(){
+        List<User> users = getUsers();
+        Stream<User> stream = users.stream();
+        //截断
+        users.addAll(getUsers());
+        for (User user : users) {
+            System.out.println(user);
+        }
+        System.out.println("----------------------");
+        //Stream<User> stream = users.stream();
+        stream.distinct().forEach(System.out::println);
+
+        //stream.distinct();
+    }
 }
 
 
